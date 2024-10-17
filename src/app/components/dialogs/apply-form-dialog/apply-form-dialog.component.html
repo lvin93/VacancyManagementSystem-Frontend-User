@@ -1,0 +1,32 @@
+<h1 mat-dialog-title>Formanı doldurun</h1>
+
+<form #dialogForm="ngForm">
+    <mat-dialog-content>
+      <mat-form-field appearance="fill">
+        <mat-label>Ad</mat-label>
+        <input matInput [(ngModel)]="name" name="name" required>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Soyad</mat-label>
+        <input matInput [(ngModel)]="surname" name="surname" required>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput [(ngModel)]="email" name="email" placeholder="Format : demo@demo.az" required>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Fin</mat-label>
+        <input matInput [(ngModel)]="fin" name="fin" placeholder="7 xarakterdən çox ola bilməz" required>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Telefon No</mat-label>
+        <input matInput placeholder="Format : +994XXXXXXX" [(ngModel)]="phone" name="phone" required>
+      </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+      <button mat-raised-button color="primary"  (click)="onNoClick()">İmtina</button>
+      <button mat-raised-button  color="primary" type="submit" (click)="onYesClick(dialogForm)">Testə başla</button>
+</mat-dialog-actions>
+
+  </form>

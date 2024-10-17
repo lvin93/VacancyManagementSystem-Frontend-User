@@ -1,0 +1,9 @@
+<!-- resume-dialog.component.html -->
+<h1 mat-dialog-title>İmtahanı Bitirdiniz</h1>
+<div mat-dialog-content>
+  <p>CV'nizi yükleyin </p><hr><h6>(fayl formatı pdf,docx və faylın ölçüsü 5mb-dan az olmalıdır)</h6>
+  <input type="file" (change)="onFileSelected($event)" accept=".pdf, .doc, .docx" />
+</div>
+<div mat-dialog-actions class="dialog-actions">
+    <button mat-stroked-button color="primary" (click)="onSubmit()">Gönder</button>
+</div>

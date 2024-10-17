@@ -1,0 +1,32 @@
+<div class="content">
+  <div class="timer">
+    <app-timer  [minutes]="questions.length"  (timeExpired)="openResumeDialog()"></app-timer>
+  </div>
+  <mat-horizontal-stepper>
+    <mat-step class="custom-stepper" *ngFor="let question of questions; let i = index">
+      <mat-card appearance="outlined">
+        <mat-card-content><h2>{{ question.questionText }}</h2></mat-card-content>
+      </mat-card>
+
+      <div class="radio-container">
+        <mat-radio-group #radioGroup="matRadioGroup" [disabled]="answeredQuestions[i]">
+          <div *ngFor="let answer of question.answers">
+            <mat-radio-button [value]="answer.id">
+              {{ answer.answerText }}
+            </mat-radio-button>
+          </div>
+        </mat-radio-group>
+      </div>
+
+      <div class="question-directions-buttons">
+        <button mat-button matStepperPrevious (click)="previousQuestion()">Əvvəlki</button>
+        <button mat-button matStepperNext (click)="nextQuestion()">Növbəti</button>
+      </div>
+
+      <div class="actions-button" style="display: flex; justify-content: space-between; margin: 30px 0;">
+        <button mat-raised-button color="primary" (click)="submitAnswer(question.id, radioGroup.value)" [disabled]="answeredQuestions[i]">Cavabla</button>
+        <button mat-raised-button color="warn" (click)="openResumeDialog()">İmtahanı bitir</button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
+</div>

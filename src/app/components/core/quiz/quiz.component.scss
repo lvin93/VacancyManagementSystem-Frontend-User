@@ -1,0 +1,31 @@
+.content {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px; 
+  max-width: 100%;
+}
+
+.timer {
+}
+
+mat-horizontal-stepper {
+  width: 100%;
+  max-width: 70%; 
+  background-color: aliceblue;
+}
+
+mat-card {
+  background-color: aliceblue;
+  margin-bottom: 15px;
+}
+
+.radio-container {
+  margin-bottom: 20px;
+}
+
+.question-directions-buttons {
+  margin-bottom: 10px;
+}
